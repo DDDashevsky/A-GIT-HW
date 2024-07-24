@@ -2,6 +2,7 @@ package tickets;
 
 import tools.Formater;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -21,11 +22,14 @@ public class Ticket {
 
     private int id;
 
+    public static ArrayList<Ticket> ticketList = new ArrayList<>();
+
     {
         id = counter;
         counter++;
         Date now = new Date();
         time = now.getTime();
+        ticketList.add(this);
     }
 
     public int getId() {

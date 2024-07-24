@@ -5,10 +5,21 @@ import tools.Formater;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 public class TicketService {
 
-
+    public static Ticket getTicketById(int id){
+        Ticket ticket = null;
+        for (int i = 0; i < Ticket.ticketList.size(); i++) {
+            if(Ticket.ticketList.get(i).getId() == id) {
+                ticket = Ticket.ticketList.get(i);
+                break;
+            }
+        }
+        return ticket;
+    }
 
 
     public static void main(String[] args) {
+
+
 
         Ticket emptyTicket = new Ticket();
         Ticket emptyTicket1 = new Ticket();
