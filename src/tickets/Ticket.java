@@ -7,6 +7,7 @@ import java.util.Date;
 
 
 public class Ticket {
+    static ArrayList<Ticket> ticketStorage = new ArrayList<Ticket>();
     private static int counter = 1;
     private String concertHall;
 
@@ -112,6 +113,7 @@ public class Ticket {
     public Ticket makeLimitedTicket(String concertHall, int eventCode) {
         setConcertHall(concertHall);
         setEventCode(eventCode);
+        ticketStorage.add(this);
         return this;
     }
 
@@ -122,6 +124,7 @@ public class Ticket {
         setSector(sector);
         setBackpackWeight(backpackWeight);
         setPrice(price);
+        ticketStorage.add(this);
         return this;
     }
 
