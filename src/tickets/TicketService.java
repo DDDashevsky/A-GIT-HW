@@ -3,30 +3,35 @@ package tickets;
 import tools.Formater;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class TicketService {
+
+    public static Ticket getTicketById(int id){
+        Ticket ticket = null;
+        for (int i = 0; i < Ticket.ticketList.size(); i++) {
+            if(Ticket.ticketList.get(i).getId() == id) {
+                ticket = Ticket.ticketList.get(i);
+                break;
+            }
+        }
+        return ticket;
+    }
+
+
     public static void main(String[] args) {
 
+
+
         Ticket emptyTicket = new Ticket();
-        System.out.println("Empty Ticket");
-        System.out.println("Ticket id: " + Formater.idFormater(emptyTicket.getId()));
+        Ticket emptyTicket1 = new Ticket();
+        Ticket emptyTicket2 = new Ticket();
+        Ticket emptyTicket3 = new Ticket();
+        Ticket emptyTicket4 = new Ticket();
+        Ticket emptyTicket5 = new Ticket();
+        Ticket emptyTicket6 = new Ticket();
+        Ticket emptyTicket7 = new Ticket();
+        Ticket emptyTicket8 = new Ticket();
+        Ticket emptyTicket9 = new Ticket();
 
-        Ticket limitedTicket = new Ticket().makeLimitedTicket("Tauron", 123);
-
-        System.out.println("Limited Ticket");
-        System.out.println("Ticket id: " + Formater.idFormater(limitedTicket.getId()));
-        System.out.println("Time: " + limitedTicket.getTime());
-
-        Ticket regularTicket = new Ticket().makeRegularTicket("Some Hall", 345, true, 'a', 12.4f, 43.11f);
-        //Checks
-        System.out.println("Regular Ticket");
-        System.out.println("Ticket id: " + Formater.idFormater(regularTicket.getId()));
-        System.out.println("Backpack weight: " + (regularTicket.getBackpackWeight()));
-        System.out.println("Promo Status: " + (regularTicket.getIsPromo()));
-        System.out.println("Sector " + regularTicket.getSector());
-        System.out.println("Concert hall: " + regularTicket.getConcertHall());
-        System.out.println("Event code: " + regularTicket.getEventCode());
-        System.out.println("Price: " + regularTicket.getPrice());
-        System.out.println("Time: " + regularTicket.getTime());
     }
+
 }
