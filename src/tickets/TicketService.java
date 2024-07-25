@@ -2,9 +2,27 @@ package tickets;
 
 import tools.Formater;
 
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class TicketService {
+    // Method to get ticket objects by sector
+    static ArrayList<Ticket> getTicketBySector(ArrayList<Ticket> ticketStorage, char sector) {
+        ArrayList<Ticket> result = new ArrayList<>();
+
+        for (Ticket ticket : ticketStorage) {
+            if (ticket.getSector() == sector) {
+                result.add(ticket);
+            }
+        }
+
+        for (Ticket ticket : result) {
+            System.out.println("ID: " + ticket.getId() + " => " + "Sector: " + ticket.getSector());
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
         Ticket emptyTicket = new Ticket();
@@ -35,5 +53,9 @@ public class TicketService {
         System.out.println(Ticket.ticketStorage.get(0).getSector());
         System.out.println(Ticket.ticketStorage.get(1).getSector());
         System.out.println(Ticket.ticketStorage.get(2).getSector());
+
+        //check that method to getting ticket by ID working
+        getTicketBySector(Ticket.ticketStorage, 'A');
+        getTicketBySector(Ticket.ticketStorage, 'B');
     }
 }
