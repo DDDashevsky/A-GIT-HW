@@ -18,6 +18,8 @@ public class TicketService {
         System.out.println("Time: " + limitedTicket.getTime());
 
         Ticket regularTicket = new Ticket().makeRegularTicket("Some Hall", 345, true, 'a', 12.4f, 43.11f);
+        Ticket regularTicket2 = new Ticket().makeRegularTicket("Any Hall", 346, true, 'B', 12.4f, 43.11f);
+
         //Checks
         System.out.println("Regular Ticket");
         System.out.println("Ticket id: " + Formater.idFormater(regularTicket.getId()));
@@ -28,5 +30,10 @@ public class TicketService {
         System.out.println("Event code: " + regularTicket.getEventCode());
         System.out.println("Price: " + regularTicket.getPrice());
         System.out.println("Time: " + regularTicket.getTime());
+
+        //check ticket storage
+        System.out.println(Ticket.ticketStorage.get(0).getSector());
+        System.out.println(Ticket.ticketStorage.get(1).getSector());
+        System.out.println(Ticket.ticketStorage.get(2).getSector());
     }
 }
